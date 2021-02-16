@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.main {
+    padding: 1.5em;
+    height: 100vh;
+    background: url('../pexels-photo-337540\ \(1\).png');
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .fa {
+            font-size: 2em;
+            color: white;
+            cursor: pointer;
+            visibility: hidden;
+        }
+        .links-div {
+            z-index: 100;
+            width: 300px;
+            position: fixed;
+            left: -100%;
+            height: 100vh;
+            background: linear-gradient(to bottom right, rgba(0,0,0,0.7), rgba(255,255,255,0.6));
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+            backdrop-filter: blur(5px);
+            transform: 300ms;
+
+            .link {
+                margin-left: 3em;
+                li{
+                    display: block;
+                    margin-top: 1.5em;
+                }
+            }
+        }
+        .links-div.active {
+            left: 0;
+            transform: 800ms;
+
+        }
+        .signup {
+            li {
+                margin-left: 1em;
+                a {
+                    padding: .55em .85em;
+                    background-color: transparent;
+                    border: 1px solid white;
+                    border-radius: 30px;
+                    transition: 300ms;
+                    &:hover{
+                        background-color: white;
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+    .center {
+        position: relative;
+        left: 50%;
+        top: 15%;
+        transform: translate(-50%,-15%);
+        text-align: center;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 8em;
+        h1{
+            font-weight: bold;
+            font-size: 100px;
+            color: white;
+        }
+        input {
+            outline: none;
+            border: none;
+            width: 650px;
+            padding: 1em;
+            border-radius: 40px;
+            font-size: 1em;
+            margin-bottom: 1em;
+            filter: drop-shadow(16px 16px 16px gray);
+        }
+        span {
+            position: relative;
+            left: -2.9em;
+            cursor: pointer;
+            padding: .5em;
+        }
+    }
+    ul {
+        li {
+            margin: .5em .75em;
+            a {
+                transition: 400ms;
+                padding-bottom: .3em;
+                &:hover {
+                    color: rgb(61, 59, 59);
+                    border-bottom: 2px solid white;
+                }
+            }
+        }
+    }
+
+}
+
+.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100vw - 3em);
+    margin: auto;
+    position: absolute;
+    bottom: 2em;
+
+    .social {
+        ul {
+            li {
+                list-style: none;
+                display: inline-block;
+                margin-right: 1em;
+                a {
+                    i {
+                        color: white;
+                        font-size: 1.5em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+ul {
+    li {
+        list-style: none;
+        display: inline-block;
+    }
+}
+
+p {
+    color: white;
+}
+
+
+@media screen and (max-width: 750px) {
+    .main {
+        .center {
+            .search {
+                width: 500px
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .main {
+        .center {
+            .search {
+                width: 350px
+            }
+            .links {
+                display: none;
+            }
+        }
+        .top {
+            .fa {
+                cursor: pointer;
+                visibility: visible;
+            }
+
+        }
+    }
+
+}
+
+
+
+@media screen and (max-width: 420px) {
+    .main {
+        .center {
+            .h1 {
+                font-size: 80px;
+            }
+            .search {
+                width: 250px;
+            }
+        }
+    }
+}
